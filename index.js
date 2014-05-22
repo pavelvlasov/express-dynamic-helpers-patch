@@ -1,6 +1,6 @@
 'use strict';
 
-// express 3.x response patch for dynamicHelpers support
+// express response patch for dynamicHelpers support
 var response = require('express').response,
   render = response.render;
 
@@ -19,16 +19,14 @@ module.exports = function(app) {
 
 // patch render function
 response.render = function() {
-  var locals = {},
-    dynamicHelpers = this.app._dynamicHelpers;
+  var dynamicHelpers = this.app._dynamicHelpers;
 
   if (dynamicHelpers) {
     for (var key in dynamicHelpers) {
       // call every helper and sign result to locals
-      locals[key] = dynamicHelpers[key].call(this.app, this.req, this);
+      this.locals[key] = dynamicHelpers[key].call(this.app, this.req, this);
     }
   }
 
-  this.locals(locals);
   render.apply(this, arguments);
 };

@@ -1,17 +1,20 @@
 {
-  "name": "express3-dynamic-helpers-patch",
-  "version": "0.0.1",
-  "description": "Dynamic helpers monkey patch for express 3",
+  "name": "express-dynamic-helpers-patch",
+  "version": "0.0.2",
+  "description": "Dynamic helpers monkey patch for express 3.x and 4.x",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/freakycue/express3-dynamic-helpers-patch.git"
+    "url": "git://github.com/freakycue/express-dynamic-helpers-patch.git"
   },
   "keywords": [
     "express3",
+    "express4",
+    "3.x",
+    "4.x",
     "express",
     "dynamic",
     "helpers",
